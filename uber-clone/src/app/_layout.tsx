@@ -1,22 +1,8 @@
-import { Tabs } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import "../global.css";
+import "../nativewind-setup";
 
-import { Colors } from '@/constants/theme';
+import { Stack } from "expo-router";
 
-export default function TabLayout() {
-  const scheme = useColorScheme();
-  const colors = Colors[scheme === 'dark' ? 'dark' : 'light'];
-
-  return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: colors.text,
-        tabBarInactiveTintColor: colors.textSecondary,
-        tabBarStyle: { backgroundColor: colors.background },
-      }}>
-      <Tabs.Screen name="index" options={{ title: 'Home' }} />
-      <Tabs.Screen name="explore" options={{ title: 'Explore' }} />
-    </Tabs>
-  );
+export default function RootLayout() {
+  return <Stack screenOptions={{ headerShown: false }} />;
 }
